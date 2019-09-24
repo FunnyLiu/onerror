@@ -24,7 +24,7 @@ const defaultOptions = {
 
 module.exports = function onerror(app, options) {
   options = Object.assign({}, defaultOptions, options);
-
+  // 直接hack掉ctx.onerror
   app.context.onerror = function(err) {
     // don't do anything if there is no error.
     // this allows you to pass `this.onerror`

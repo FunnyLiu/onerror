@@ -29,6 +29,10 @@ errors are directly handle by `ctx.onerror`, so if we want to handle all
 errors in one place, the only way i can see is to hack `ctx.onerror`.
 - it is more customizable.
 
+# 源码分析
+
+和koa-error使用try-catch的思路不同，这里采用hack了ctx.onerror方法的方式来处理异常。这样就可以处理 steams和and event的errors，并且提供了更加灵活的配置参数。
+
 ## install
 
 ```bash
